@@ -3,16 +3,25 @@ body {
 }
 
 .mainContainer {
-  height: 600px;
+  height: auto;
   width: auto;
   margin: 1em 10em 1em 10em;
-  border: 1px solid black;
+  border: 2px solid black;
+}
+
+.header{
+  border-bottom: 2px solid black;
+}
+
+.taskForm {
+  border-bottom: 2px solid black;
 }
 
 .taskEl {
-  background-color: grey;
+  background-color: rgb(172, 171, 171);
   margin: 1em 1em 1em 1em;
   padding: 1em 1em 1em 1em;
+  border-radius: 12px;
 }
 
 .remind {

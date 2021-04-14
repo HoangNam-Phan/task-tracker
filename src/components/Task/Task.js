@@ -9,12 +9,14 @@ const Task = ({ task, deleteTask }) => {
         console.log(reminder);
     }
 
+
     return (
         <div>
             <div className={reminder ? ' taskEl d-flex flex-column align-items-start remind' : `taskEl d-flex flex-column align-items-start `}
                 onDoubleClick={toggleReminder}>
-                <div>
-                    <b>{task.taskName}</b><button onClick={() => deleteTask(task.id)}>x</button>
+                <div className='container d-flex row justify-content-between'>
+                    <b>{task.taskName}</b>
+                    <button className='btn btn-danger' onClick={() => deleteTask(task.id)}>x</button>
                 </div>
                 {task.time}
 

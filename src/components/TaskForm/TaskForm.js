@@ -12,7 +12,7 @@ const TaskForm = ( { tasks, addTask } ) => {
     }
 
     return (
-        <div className='container border border-dark p-0'>
+        <div className='taskForm container-fluid py-2'>
             <div className='container d-flex flex-column align-items-start'>
                 <label htmlFor="task">Task</label>
                 <input type="text" placeholder='Add Task' 
@@ -23,7 +23,7 @@ const TaskForm = ( { tasks, addTask } ) => {
                 <input type="text" placeholder='Add Day & Time'
                 value={time} onChange={(e) => setTime(e.target.value)}/>
             </div>
-            <button onClick={() => addTask(text,time,generateID())}>Add Task</button>
+            <button className='btn btn-primary mt-2' onClick={() => addTask(text,time,generateID())}>Add Task</button>
         </div>
     )
 }

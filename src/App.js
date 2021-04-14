@@ -15,7 +15,7 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       taskName: 'Clean room',
-      time: 'Today',
+      time: 'This afternoon',
       id: 1
     },
     {
@@ -31,16 +31,17 @@ function App() {
   ])
 
   const addTask = (text, time, id) => {
-    if(text === '' || time === ''){
+    if (text === '' || time === '') {
       alert('Enter a task and time')
     }
     else {
-    const newTask = {
-      taskName: text,
-      time: time,
-      id: id
+      const newTask = {
+        taskName: text,
+        time: time,
+        id: id
+      }
+      setTasks([...tasks, newTask])
     }
-    setTasks([...tasks, newTask])}
   }
 
   const deleteTask = (id) => {
@@ -48,10 +49,12 @@ function App() {
   }
 
   return (
-    <div className='mainContainer'>
-      <Header toggleTasks={toggleTasks} tasktoggle={tasktoggle}/>
+    <div className='mainContainer d-flex flex-column'>
+      <Header toggleTasks={toggleTasks} tasktoggle={tasktoggle} />
       {tasktoggle && <TaskForm tasks={tasks} addTask={addTask} />}
-      {tasks.length > 0 ? <TaskList tasks={tasks} deleteTask={deleteTask} /> : 'Nothing to see here'}
+      {tasks.length > 0 ?
+        <TaskList tasks={tasks} deleteTask={deleteTask} />
+        : 'Nothing to see here...'}
     </div>
   );
 }
